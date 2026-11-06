@@ -1,32 +1,37 @@
-# 💔 Psicólogo del Amor - Versión Gemini
+# 💔 Dr. Corazón Invertido - IA Psicológica Local
 
-Esta es la aplicación completa con el agente inteligente "Doctor Corazón Invertido", potenciado por Google Gemini usando LangGraph.
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?logo=fastapi&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-black)
+![LangGraph](https://img.shields.io/badge/LangGraph-State_Agents-orange)
+![HTML5/CSS3/JS](https://img.shields.io/badge/Frontend-Vanilla-E34F26?logo=html5)
 
-## 📂 Estructura
-- `/backend`: Lógica de la IA y servidor API. (Contiene el `main.py` configurado con `langchain-google-genai`).
-- `/frontend`: Interfaz de usuario (Test de deslizar y Chat).
-- `/database`: Script de MySQL para crear las tablas.
+Aplicación web impulsada por IA local (Ollama/Llama 3) y LangGraph que actúa como un psicólogo conversacional irónico para diagnosticar la negación romántica. Todo el procesamiento se realiza de forma **100% local, privada y gratuita**, sin depender de APIs de pago.
 
-## 🚀 Cómo iniciar el proyecto
+## 🚀 Características Principales
 
-### PASO 1: Configurar la IA (Backend)
-1. Abre tu terminal (Git Bash, CMD, o la terminal de VS Code) y entra a la carpeta `backend`.
-2. Instala las librerías necesarias ejecutando:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Renombra el archivo `.env.example` dejándolo solo como `.env`.
-4. Abre el `.env` y coloca tu API Key de Google (Gemini) donde dice `tu_clave_de_gemini_aqui`.
-5. Enciende el servidor con:
-   ```bash
-   uvicorn main:app --reload
-   ```
-   Verás que el servidor arranca en `http://localhost:8000`.
+- **Test Diagnóstico Interactivo:** Un cuestionario dinámico de 15 preguntas que evalúa los niveles de "Enamoramiento" y "Negación" del usuario de manera cuantitativa.
+- **IA con Personalidad (Dr. Corazón Invertido):** Un agente conversacional configurado con psicología inversa, sarcasmo y empatía oculta, que llama al usuario por su nombre.
+- **Flujo de Trabajo Condicional (LangGraph):** El backend utiliza grafos de estado. Si el usuario insiste demasiado en su negación (ej. usando frases como "solo amigos" o "no me importa"), la IA enruta la conversación hacia un nodo "gamificador" que le asigna misiones y retos conductuales.
+- **100% Local y Privado:** Usa `langchain-ollama` para conectarse a un modelo Llama 3 ejecutado en la propia máquina del usuario.
+- **Exportación de Sesiones:** Permite al usuario descargar un reporte de su terapia en formato `.txt` incluyendo sus puntajes iniciales y todo el historial de chat.
 
-### PASO 2: Abrir la Aplicación (Frontend)
-1. Navega a la carpeta `frontend`.
-2. Haz doble clic en el archivo `index.html` para que se abra en Google Chrome o tu navegador favorito.
-3. ¡Eso es todo! Haz el test y empieza a chatear.
+## 🛠️ Tecnologías Utilizadas
 
-### PASO 3: Base de Datos (Para producción - Opcional)
-Si quieres guardar los datos a futuro, usa el archivo `schema.sql` en la carpeta `database` y ejecútalo en tu gestor de MySQL Workbench.
+- **Backend:** Python, FastAPI, Uvicorn, Pydantic.
+- **IA & Orquestación:** LangChain, LangGraph, Ollama (Llama 3).
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla).
+
+## 📂 Estructura del Proyecto
+
+```text
+📦 langgraph-ai-psychologist
+ ┣ 📂 backend
+ ┃ ┣ 📜 main.py               # Lógica principal, LangGraph, y servidor FastAPI
+ ┃ ┗ 📜 requirements.txt      # Dependencias de Python
+ ┣ 📂 frontend
+ ┃ ┣ 📜 index.html            # Interfaz de usuario (Bienvenida, Test, Chat)
+ ┃ ┣ 📜 style.css             # Estilos de la aplicación
+ ┃ ┗ 📜 app.js                # Lógica del frontend, test y peticiones fetch
+ ┣ 📜 .gitignore              # Archivos ignorados (entornos virtuales, claves)
+ ┗ 📜 README.md
