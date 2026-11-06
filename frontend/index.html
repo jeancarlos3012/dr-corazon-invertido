@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Corazón Invertido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        
+        <!-- Pantalla 1: Bienvenida y Nombre -->
+        <div id="screen-welcome" class="screen active">
+            <div class="welcome-content">
+                <h1>🧠 Clínica del Dr. Corazón</h1>
+                <p>Antes de iniciar tu diagnóstico sentimental, necesito saber con quién estoy hablando.</p>
+                <input type="text" id="input-nombre" placeholder="Ingresa tu nombre..." onkeypress="handleNameEnter(event)">
+                <button onclick="iniciarTest()" class="btn-primary">Comenzar Evaluación</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 2: Test Psicológico (15 preguntas) -->
+        <div id="screen-test" class="screen">
+            <div class="header">
+                <h2>Evaluación Diagnóstica</h2>
+                <p id="progress-text">Pregunta 1 de 15</p>
+                <div class="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="test-content">
+                <h3 id="question-text">Cargando pregunta...</h3>
+                <div id="options-container">
+                    <!-- Las opciones se inyectan desde JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla 3: Chat con el Psicólogo IA -->
+        <div id="screen-chat" class="screen">
+            <div class="header">
+                <h2>Dr. Corazón Invertido</h2>
+                <p id="diagnostic-results">Calculando resultados...</p>
+            </div>
+            
+            <div id="chat-box">
+                <!-- El mensaje de inicio se inyectará aquí al terminar el test -->
+            </div>
+
+            <div class="chat-controls">
+                <input type="text" id="user-input" placeholder="Escribe tu excusa..." onkeypress="handleChatEnter(event)">
+                <button id="send-btn" onclick="enviarMensaje()">Enviar</button>
+            </div>
+
+            <button onclick="descargarChat()" class="btn-descarga">
+                💾 Descargar sesión con el Doctor
+            </button>
+        </div>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
